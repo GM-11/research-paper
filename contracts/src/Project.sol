@@ -17,7 +17,7 @@ contract Project {
     string public paperUri;
     string public topic;
 
-    address immutable owner;
+    address public immutable owner;
 
     mapping(uint256 => string) public feedbacks;
     uint256 totalFeedbacks;

@@ -3,7 +3,7 @@ import { ethers } from 'ethers';
 
 type User = {
 	address: string;
-	provider: ethers.BrowserProvider;
+	provider: ethers.JsonRpcProvider;
 	signer: ethers.Signer;
 };
 
