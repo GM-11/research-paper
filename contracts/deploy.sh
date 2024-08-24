@@ -12,6 +12,11 @@ else
     echo "Invalid network type. Please enter 'local' or 'prod'."
 fi
 
-s
+
+cast send 0x700b6A60ce7EaaEA56F065753d8dcB9653dbAD35 "createProject(string name, string paperUri, string topic)" "Chemistry" "URI" "sometopic" --rpc-url http://127.0.0.1:8545 --private-key 0x2a871d0798f97d79848a013d4936a73bf4cc922c825d33c1cf7073dff6d409c6
+cast send 0x700b6A60ce7EaaEA56F065753d8dcB9653dbAD35 "createProject(string name, string paperUri, string topic)" "Physics" "URI" "sometopic" --rpc-url http://127.0.0.1:8545 --private-key 0x2a871d0798f97d79848a013d4936a73bf4cc922c825d33c1cf7073dff6d409c6
+cast send 0x700b6A60ce7EaaEA56F065753d8dcB9653dbAD35 "createProject(string name, string paperUri, string topic)" "Maths" "URI" "sometopic" --rpc-url http://127.0.0.1:8545 --private-key 0x2a871d0798f97d79848a013d4936a73bf4cc922c825d33c1cf7073dff6d409c6
+
+
 
 # cast call 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512 "getAllProjects()" --rpc-url http://127.0.0.1:8545 --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80

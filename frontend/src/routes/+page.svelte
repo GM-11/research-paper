@@ -1,16 +1,16 @@
 <script lang="ts">
 	import { user } from '../stores/userStore';
-	import { projects, type Project } from '../stores/projectStore';
+	import { projects } from '../stores/projectStore';
 	import { onMount } from 'svelte';
 	import For from '../components/For.svelte';
 	import { connectWallet } from '$lib/utils';
-	import { getAllProjects } from '$lib/project';
+    import { getAllProjects } from '$lib/projects';
+	
 
 	onMount(() => {
 		getAllProjects(); // Ensure this only runs once when the component mounts
 	});
 
-	console.log($projects);
 </script>
 
 {#if $user}
