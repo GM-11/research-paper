@@ -19,6 +19,8 @@ contract Project {
 
     address public immutable owner;
 
+    address[] public contributers;
+
     mapping(uint256 => string) public feedbacks;
     uint256 totalFeedbacks;
 
@@ -36,12 +38,14 @@ contract Project {
         string memory _name,
         string memory _paperUri,
         string memory _topic,
-        address _owner
+        address _owner,
+        address[] memory _contributers
     ) {
         name = _name;
         paperUri = _paperUri;
         owner = _owner;
         topic = _topic;
+        contributers = _contributers;
     }
 
     modifier onlyOwner() {

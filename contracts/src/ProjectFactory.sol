@@ -11,10 +11,11 @@ contract ProjectFactory {
     function createProject(
         string memory name,
         string memory paperUri,
-        string memory topic
+        string memory topic,
+        address[] memory contributers
     ) external {
         address newProject = address(
-            new Project(name, paperUri, topic, msg.sender)
+            new Project(name, paperUri, topic, msg.sender, contributers)
         );
         projects[totalProjects++] = newProject;
         emit ProjectCreated(newProject);

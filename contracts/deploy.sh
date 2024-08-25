@@ -13,9 +13,9 @@ else
 fi
 
 
-cast send 0x700b6A60ce7EaaEA56F065753d8dcB9653dbAD35 "createProject(string name, string paperUri, string topic)" "Chemistry" "URI" "sometopic" --rpc-url http://127.0.0.1:8545 --private-key 0x2a871d0798f97d79848a013d4936a73bf4cc922c825d33c1cf7073dff6d409c6
-cast send 0x700b6A60ce7EaaEA56F065753d8dcB9653dbAD35 "createProject(string name, string paperUri, string topic)" "Physics" "URI" "sometopic" --rpc-url http://127.0.0.1:8545 --private-key 0x2a871d0798f97d79848a013d4936a73bf4cc922c825d33c1cf7073dff6d409c6
-cast send 0x700b6A60ce7EaaEA56F065753d8dcB9653dbAD35 "createProject(string name, string paperUri, string topic)" "Maths" "URI" "sometopic" --rpc-url http://127.0.0.1:8545 --private-key 0x2a871d0798f97d79848a013d4936a73bf4cc922c825d33c1cf7073dff6d409c6
+cast send 0x8ce361602B935680E8DeC218b820ff5056BeB7af "createProject(string name, string paperUri, string topic)" "Bio" "URI" "sometopic" --rpc-url http://127.0.0.1:8545 --private-key 0x4bbbf85ce3377467afe5d46f804f221813b2bb87f24d81f60f1fcdbf7cbf4356
+cast send 0x8ce361602B935680E8DeC218b820ff5056BeB7af "createProject(string name, string paperUri, string topic)" "THermo" "URI" "sometopic" --rpc-url http://127.0.0.1:8545 --private-key 0x4bbbf85ce3377467afe5d46f804f221813b2bb87f24d81f60f1fcdbf7cbf4356
+cast send 0x8ce361602B935680E8DeC218b820ff5056BeB7af "createProject(string name, string paperUri, string topic)" "Eng" "URI" "sometopic" --rpc-url http://127.0.0.1:8545 --private-key 0x4bbbf85ce3377467afe5d46f804f221813b2bb87f24d81f60f1fcdbf7cbf4356
 
 
 

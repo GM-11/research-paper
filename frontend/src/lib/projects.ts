@@ -35,10 +35,6 @@ export async function getAllProjects() {
         const fund = Number(await userValue.provider.getBalance(address));
         const owner = await project.owner();
 
-        if (owner !== userValue.address) {
-          continue;
-        }
-
         newProjects.push({
           name,
           paperUri,
