@@ -17,7 +17,9 @@ contract ProjectFactory {
         address newProject = address(
             new Project(name, paperUri, topic, msg.sender, contributers)
         );
-        projects[totalProjects++] = newProject;
+        unchecked {
+            projects[totalProjects++] = newProject;
+        }
         emit ProjectCreated(newProject);
     }
 

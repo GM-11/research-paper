@@ -45,7 +45,7 @@
     <div class="overlay">
       <h1>REASEWORK</h1>
       <p class="overlayp">Research made easy</p>
-      <button on:click={connectWallet}>Connect Wallet</button>
+      <a href="/auth">Get started</a>
     </div>
   </main>
   <For />
@@ -93,7 +93,7 @@
     letter-spacing: 0.75rem;
   }
 
-  button {
+  a {
     background-color: var(--primary);
     color: var(--background);
     padding: 0.5rem 2rem;
@@ -103,7 +103,7 @@
     margin: 1rem;
     transition: 0.1s ease-in-out;
   }
-  button:hover {
+  a:hover {
     border-radius: 0;
     transition: 0.1s ease-in-out;
   }

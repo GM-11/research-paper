@@ -3,6 +3,7 @@ pragma solidity ^0.8.26;
 
 import {ProjectFactory} from "../src/ProjectFactory.sol";
 import {Project} from "../src/Project.sol";
+import {Users} from "../src/Users.sol";
 import {Test, console} from "forge-std/Test.sol";
 
 contract ProjectFactoryTest is Test {
@@ -13,10 +14,8 @@ contract ProjectFactoryTest is Test {
     }
 
     function testAddProject() public {
-        projectFactory.createProject("Name", "URI", "Topic");
+        address[] memory contributers = new address[](1);
+        projectFactory.createProject("Name", "URI", "Topic", contributers);
         assertEq(projectFactory.totalProjects(), 1);
-    }
-
-    function testFundProject() public {
     }
 }
