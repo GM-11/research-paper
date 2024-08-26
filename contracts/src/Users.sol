@@ -9,6 +9,7 @@ contract Users {
     struct UserType {
         address walletAddress;
         string name;
+        string email;
         Type userType;
     }
 
@@ -22,8 +23,12 @@ contract Users {
         Type userType
     );
 
-    function createUser(string memory _name, Type _userType) external {
-        users[msg.sender] = UserType(msg.sender, _name, _userType);
+    function createUser(
+        string calldata _name,
+        string calldata _email,
+        Type _userType
+    ) external {
+        users[msg.sender] = UserType(msg.sender, _name, _email, _userType);
         userAddresses.push(msg.sender);
         unchecked {
             ++userCount;

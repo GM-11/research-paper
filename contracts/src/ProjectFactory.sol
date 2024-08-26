@@ -9,10 +9,10 @@ contract ProjectFactory {
     event ProjectCreated(address indexed);
 
     function createProject(
-        string memory name,
-        string memory paperUri,
-        string memory topic,
-        address[] memory contributers
+        string calldata name,
+        string calldata paperUri,
+        string calldata topic,
+        address[] calldata contributers
     ) external {
         address newProject = address(
             new Project(name, paperUri, topic, msg.sender, contributers)

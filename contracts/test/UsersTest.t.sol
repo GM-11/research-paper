@@ -12,7 +12,7 @@ contract UsersTest is Test {
     }
 
     function testCreateUser() public {
-        users.createUser("Pawan", Users.Type.PROFESSOR);
+        users.createUser("Pawan", "pawan@gmail.com",Users.Type.PROFESSOR);
         assertEq(users.userCount(), 1);
     }
 }

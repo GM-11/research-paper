@@ -2,7 +2,7 @@ import { ethers, type Eip1193Provider } from "ethers";
 import { user } from "../stores/userStore";
 import { USERS_CONTRACT_ABI, USERS_CONTRACT_ADDRESS } from "./contracts";
 
-export async function createUser(name: string, userType: 0 | 1) {
+export async function createUser(name: string, email: string, userType: 0 | 1) {
   if (!window.ethereum) {
     throw new Error("No ethereum provider found");
   }
@@ -16,11 +16,15 @@ export async function createUser(name: string, userType: 0 | 1) {
     signer
   );
 
-  console.log({ name, userType });
+  const result = await usersContract.createUser(name, email, userType);
+  // await result.wait();
+  console.log(result);
+  const receipt = await result.wait();
+  if (receipt) {
+    console.log(receipt);
 
-  const result = await usersContract.createUser(name, userType);
-  await result.wait();
-  user.set({ address, provider, signer, name, userType });
+    user.set({ address, provider, signer, name, email, userType });
+  }
 }
 
 export async function loginUser() {
@@ -38,11 +42,19 @@ export async function loginUser() {
   );
 
   const u = await usersContract.getUser(address);
+
   if (!u) {
     throw new Error("User not found");
   }
 
-  user.set({ address, provider, signer, name: u[1], userType: u[2] });
+  user.set({
+    address,
+    provider,
+    signer,
+    name: u[1],
+    email: u[2],
+    userType: Number(u[3]) === 0 ? 0 : 1,
+  });
 }
 
 export async function connectWallet() {
@@ -67,6 +79,7 @@ export async function connectWallet() {
     // 		}
     // 	]
     // });
+
 
     console.log("connected");
 

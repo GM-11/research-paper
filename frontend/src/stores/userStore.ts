@@ -1,15 +1,16 @@
 import { writable } from "svelte/store";
 import { ethers } from "ethers";
 
-type User = {
+export type User = {
   address: string;
   provider: ethers.BrowserProvider;
   signer: ethers.Signer;
   name: string;
+  email: string;
   userType: 0 | 1;
 };
 
-export const user = writable<User>();
+export const user = writable<User | null>();
 
 // user.subscribe((value) => {
 //   if (value) {

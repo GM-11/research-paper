@@ -1,6 +1,3 @@
-BASE_MAINNET_RPC="https://mainnet.base.org"
-BASE_SEPOLIA_RPC="https://sepolia.base.org"
-ETHERSCAN_API_KEY="MJ3TYJ95PJ8CXWQWFIV6YFU5BMTBP8G7XK"
 
 read -p "Enter network (local / prod): " network
 

@@ -9,7 +9,7 @@
   let showOnlyMyProjects = false;
 
   $: projs = showOnlyMyProjects
-    ? $projects.filter((project) => project.owner === $user.address)
+    ? $projects.filter((project) => project.owner === $user!.address)
     : $projects;
 
   onMount(() => {
@@ -17,8 +17,8 @@
   });
 </script>
 
-{#if $user}
-  <div>
+<!-- {#if $user} -->
+  <!-- <div>
     <button on:click={() => (showOnlyMyProjects = false)}>ALL PROJECTS</button>
     <button on:click={() => (showOnlyMyProjects = true)}>My Projects</button>
   </div>
@@ -40,7 +40,7 @@
       </a>
     {/each}
   </div>
-{:else}
+{:else} -->
   <main>
     <div class="overlay">
       <h1>REASEWORK</h1>
@@ -49,7 +49,7 @@
     </div>
   </main>
   <For />
-{/if}
+<!-- {/if} -->
 
 <style>
   main {
